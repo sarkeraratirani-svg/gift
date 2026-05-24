@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secret Gift 🎁</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:linear-gradient(135deg,#0f0f1f,#1d0036,#33004d);
+    color:white;
+    text-align:center;
+}
+
+/* Animated background glow */
+body::before{
+    content:'';
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:rgba(255,0,255,0.2);
+    filter:blur(120px);
+    animation:move 8s infinite alternate;
+}
+
+@keyframes move{
+    from{transform:translate(-100px,-50px);}
+    to{transform:translate(100px,50px);}
+}
+
+.container{
+    position:relative;
+    z-index:2;
+    background:rgba(255,255,255,0.08);
+    padding:40px 25px;
+    border-radius:25px;
+    backdrop-filter:blur(12px);
+    width:90%;
+    max-width:400px;
+    box-shadow:0 0 30px rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.15);
+}
+
+h1{
+    font-size:2rem;
+    margin-bottom:10px;
+    color:#ffccff;
+}
+
+p{
+    color:#ddd;
+    margin-bottom:25px;
+}
+
+button{
+    padding:15px 28px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(45deg,#ff00cc,#3333ff);
+    color:white;
+    font-size:1.1rem;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 0 20px rgba(255,255,255,0.2);
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+.popup{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    background:#111;
+    color:#00ff66;
+    width:90%;
+    max-width:420px;
+    padding:30px 20px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 0 35px rgba(0,255,100,0.4);
+    z-index:10;
+    transition:0.4s;
+}
+
+.popup.active{
+    transform:translate(-50%,-50%) scale(1);
+}
+
+.popup h2{
+    font-size:1.8rem;
+    margin-bottom:15px;
+}
+
+.popup p{
+    color:#00ff66;
+    font-size:1rem;
+    line-height:1.6;
+}
+
+.close-btn{
+    margin-top:20px;
+    background:linear-gradient(45deg,#00ff66,#00ccff);
+}
+
+.typing{
+    border-right:2px solid #00ff66;
+    white-space:nowrap;
+    overflow:hidden;
+    width:0;
+    animation:typing 3s steps(40,end) forwards;
+}
+
+@keyframes typing{
+    from{width:0;}
+    to{width:100%;}
+}
+
+.warning{
+    margin-top:15px;
+    color:#ff4d4d;
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:0;}
+}
+
+@media(max-width:500px){
+    h1{
+        font-size:1.6rem;
+    }
+
+    button{
+        width:100%;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🎁 Secret Anime Gift</h1>
+    <p>Rudra sent you a super rare futuristic gift 👀</p>
+
+    <button onclick="showHack()">Click For Gift</button>
+</div>
+
+<div class="popup" id="popup">
+    <h2>⚠ SYSTEM ALERT ⚠</h2>
+
+    <p class="typing">Your ID has been hacked by Rudra😈</p>
+
+    <div class="warning"></div>
+
+    <button class="close-btn" onclick="closePopup()">I Almost Died 😭</button>
+
+    <div id="relaxMsg" style="display:none; margin-top:15px; color:#ffffff; font-size:1rem;">
+        😆 Relax dumb ... your ID is safe.You just got trolled by me.
+    </div>
+</div>
+
+<script>
+function showHack(){
+    document.getElementById('popup').classList.add('active');
+
+    navigator.vibrate?.(200);
+}
+
+function closePopup(){
+    document.getElementById('relaxMsg').style.display = 'block';
+
+    setTimeout(()=>{
+        document.getElementById('popup').classList.remove('active');
+        document.getElementById('relaxMsg').style.display = 'none';
+    },2500);
+}
+</script>
+
+</body>
+</html>
+```
+
+
+
